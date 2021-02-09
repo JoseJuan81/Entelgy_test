@@ -1,0 +1,200 @@
+:root {
+    --primary: #3B82F6;
+    --gray-medium: #D1D5DB;
+    --gray-dark: rgb(30, 41, 59);
+    --gray-dark-bg: rgba(30, 41, 59, 0.65);
+    --text-base: #334155;
+    --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --header-height: 6rem;
+    --footer-height: 20rem;
+    --top-height: 3rem;
+}
+
+html, body {
+    color: var(--text-base);
+    font-size: 62.5%;
+    font-family: 'Poppins';
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    --discount: var(--header-height) + var(--top-height) + var(--top-height) + var(--footer-height) + 18rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - var(--discount));
+    justify-content: center;
+}
+
+.top {
+    align-items: center;
+    background-color: var(--text-base);
+    color: white;
+    display: flex;
+    font-size: 1.5rem;
+    height: var(--top-height);
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.header {
+    align-items: center;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    height: var(--header-height);
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.github-link {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.select-country-title {
+    font-size: 3rem;
+    margin: 5rem 0 3rem;
+    text-align: center;
+}
+
+/* elemento pais */
+.countries-main-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    margin: auto;
+    max-width: 76rem;
+}
+
+.country-container {
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+.country-container:hover,
+.country-container:focus {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+}
+
+/* modal con detalle de pais */
+.modal-main-container {
+    align-items: center;
+    background-color: var(--gray-dark-bg);
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.show-modal {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    align-items: center;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+    min-width: 30rem;
+}
+
+.close-modal-button {
+    background-color: white;
+    border: 1px solid var(--gray-medium);
+    border-radius: 99rem;
+    height: 3rem;
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    width: 3rem;
+}
+
+.continent-title,
+.country-title,
+.continent-name {
+    color: var(--text-base);
+    font-size: 1.5rem;
+}
+
+.continent-title {
+    border-top: 1px solid var(--gray-medium);
+    margin-top: 0;
+    padding-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.country-title {
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.continent-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.footer {
+    align-items: center;
+    border-top: 1px solid var(--gray-medium);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    height: var(--footer-height);
+    margin-top: 10rem;
+    padding: 4rem 2rem;
+}
+
+.footer ul {
+    font-size: 1.5rem;
+    list-style: none;
+}
+
+.bottom {
+    align-items: center;
+    border-top: 1px solid var(--gray-medium);
+    font-size: 1.5rem;
+    height: var(--top-height);
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+    padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .countries-main-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
